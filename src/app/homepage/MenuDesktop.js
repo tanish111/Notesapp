@@ -5,6 +5,18 @@ import { AddIcon } from '@chakra-ui/icons'
 import { Noto_Sans } from 'next/font/google'
 const mongoose = require('mongoose')
 const notosans = Noto_Sans({ subsets: ['latin'], weight: "800" })
+const getNotes = async() => {
+  try {
+    const res = await fetch('http://localhost:3000/api/notes',{
+    cache: "no-store",
+  });
+  if(!res.ok){
+    throw new Error("Failed to fetch notes");
+  }
+  } catch (error){
+
+  }
+}
 function MenuDesktop({titleList,addNotefunc}) {
   const notesTitle = titleList
   var count = Object.keys(notesTitle).length
