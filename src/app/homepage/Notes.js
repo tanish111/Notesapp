@@ -1,8 +1,9 @@
 import React from 'react'
 import { Textarea,Box } from '@chakra-ui/react'
 import { Noto_Sans } from 'next/font/google'
+const mongoose = require('mongoose')
 const notosans = Noto_Sans({subsets: ['latin'],weight:"700"})
-function Notes({notes}) {
+async function Notes({notes}) {
   const title = (notes.length) ? notes[0] : "";
   return (
     <Box display="flex" flexDir="column" justifyContent="flex-start" alignItems="stretch" minH="100%">
