@@ -5,7 +5,7 @@ function SearchBar(props) {
     var searchData = ""
     const [searchResults,setSearchResults] = useState([])
     function searchNote(){
-        fetch(`http://localhost:3000/api/notes/search?what=${searchData}`, {
+        fetch(`https://notesapp-murex-three.vercel.app/api/notes/search?what=${searchData}`, {
           cache: "no-store",
         }).then((res) => {
           res.json().then(

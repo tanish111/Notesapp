@@ -7,7 +7,7 @@ function RemoveBT({id}) {
         console.log(id)
         const confirmed = confirm('Are You Sure?');
         if(confirmed){
-            const res = await fetch(`http://localhost:3000/api/notes?id=${id}`,{
+            const res = await fetch(`https://notesapp-murex-three.vercel.app/api/notes?id=${id}`,{
                 method: "DELETE",
             });
             if(res.ok){

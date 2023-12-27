@@ -9,7 +9,7 @@ function Notename(props) {
     const name = props.name
     const id = props.noteid
     function deleteNote(){
-      fetch(`http://localhost:3000/api/notes?id=${id}`,{
+      fetch(`https://notesapp-murex-three.vercel.app/api/notes?id=${id}`,{
         method: "DELETE",
       }).then(() => {
         router1.reload();

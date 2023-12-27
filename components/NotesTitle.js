@@ -13,7 +13,7 @@ function NotesTitle() {
   var title = ""
   function newNote(){
     var noteData = ""
-    fetch("http://localhost:3000/api/notes",{
+    fetch("https://notesapp-murex-three.vercel.app/api/notes",{
       method: "POST",
       header:{
         "Content-type":"application/json"

@@ -9,7 +9,7 @@ function Notes(props) {
   var [notesdata,setNotesData] = useState("")
   useEffect(() => {
     if(notesID!=""){
-    fetch(`http://localhost:3000/api/notes/${notesID}`, {
+    fetch(`https://notesapp-murex-three.vercel.app/api/notes/${notesID}`, {
       cache: "no-store",
     }).then((res) => {
       res.json().then(
@@ -25,7 +25,7 @@ useEffect(() => {
   if(notesID!=""){
   const newTitle = titleF
   const newnoteData = notesdata
-  fetch(`http://localhost:3000/api/notes/${notesID}`,{
+  fetch(`https://notesapp-murex-three.vercel.app/api/notes/${notesID}`,{
     method:"PUT",
     headers:{
       "Content-type":"application/json",
