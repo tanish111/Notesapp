@@ -6,7 +6,7 @@ export async function PUT(request, {params}){
     const { id } = params;
     const {newTitle: title,newnoteData:noteData} = await request.json();
     await connectMongoDB();
-    await Bokor.findByIdAndUpdate(id,{title,noteData});
+    await Note.findByIdAndUpdate(id,{title,noteData});
     return NextResponse.json({message:"Topic updated"},{status:200});
 }
 

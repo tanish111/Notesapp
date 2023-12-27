@@ -1,20 +1,19 @@
 "use client"
-import { Box,ChakraProvider,Flex} from "@chakra-ui/react"
-import Notes from "./homepage/Notes"
-import MenuDesktop from "./homepage/MenuDesktop"
-import { useState } from "react"
-export default async function Home() {
-  const [currId,setcurrId] = useState();
+import { Text,Box } from "@chakra-ui/react"
+import Link from "next/link"
+export default function Home() {
   return (
-   <ChakraProvider>
-    <Flex flexDir="row" justifyContent="space-around" alignItems="stretch" minHeight="100vh" minWidth="100vw">
-    <Box flexGrow="1" backgroundColor="gray.100" minW="13rem">
-      <MenuDesktop setcurrItem={setcurrId}/>
+    <>
+    <Text fontSize="40px" width="100%" textAlign="center">
+      Welcome to Notes!
+    </Text>
+    <Box height="32px" display="flex" justifyContent="center" width="100%" fontSize="16px">
+    <Link href="/notes">
+      <Text backgroundColor="rgba(238, 238, 238,1)" padding="10px" borderRadius="15px" >
+      Go to Main Notes Page
+      </Text>
+    </Link>
     </Box>
-    <Box flexGrow="6" backgroundColor="white" minHeight="100vh">
-      <Notes idc={currId}/>
-    </Box>
-    </Flex>
-   </ChakraProvider>
+    </>
   )
 }

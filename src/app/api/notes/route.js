@@ -4,7 +4,8 @@ import Note from "../../../../models/notes";
 export async function POST(request){
     const {title,noteData} = await request.json();
     await connectMongoDB();
-    await Note.create({title,noteData});
+    let nid = await Note.create({title,noteData});
+    console.log(nid._id);
     return NextResponse.json({message:"New Note Created"},{status:201});
 }
 
@@ -20,3 +21,4 @@ export async function DELETE(request) {
     await Note.findByIdAndDelete(id);
     return NextResponse.json({message:"Note Deleted"},{status:200});
 }
+
