@@ -8,7 +8,7 @@ export default function Home() {
       Welcome to Notes!
     </Text>
     <Box height="32px" display="flex" justifyContent="center" width="100%" fontSize="16px">
-    <Link href="/notes">
+    <Link href="/NotesPage">
       <Text backgroundColor="rgba(238, 238, 238,1)" padding="10px" borderRadius="15px" >
       Go to Main Notes Page
       </Text>

@@ -5,7 +5,7 @@ import { ChakraProvider,Flex,Box,useMediaQuery } from '@chakra-ui/react'
 import { useState } from 'react'
 import NotesProvider from '../../components/provider/NotesProvider'
 import MenuMobile from '../../components/MenuMobile'
-function notes() {
+export default function NotesPage() {
     const [isLoading, setIsLoading] = useState(true)
     const [notesData,setNotesData] = useState(null)
     const [isLargerThan800] = useMediaQuery('(min-width: 850px)')
@@ -38,5 +38,3 @@ function notes() {
    </ChakraProvider>
   )
 }
-
-export default notes
